@@ -115,18 +115,23 @@
 <!-- HOME PAGE -->
 <div id="home-page" class="card page active text-center space-y-6">
   <h1 class="text-3xl font-bold">🎓 Welcome to Student Portal</h1>
+  <p id="welcomeText" class="text-lg font-semibold mt-3 text-gray-700"></p>
+<p id="timeText" class="text-sm text-gray-500"></p>
+
   <button class="btn-primary w-full" onclick="showPage('login-page')">Login</button>
   <button class="btn-secondary w-full" onclick="showPage('register-page')">Register</button>
   <button class="btn-secondary w-full" onclick="showPage('student-corner')">Student Corner</button>
+
 </div>
+
 
 <!-- LOGIN PAGE -->
 <div id="login-page" class="card page">
   <h1 class="text-3xl font-bold mb-4 text-center">Login</h1>
   <form id="login-form">
-    <input type="email" placeholder="Email" class="input-field" required>
-    <input type="password" placeholder="Password" class="input-field" required>
-    <div class="text-right mb-4">
+    <input type="email" placeholder="email"  id="email"   class="input-field" required>
+    <input type="password" placeholder="password"  id="password" class="input-field" required>
+    <div class="text-left mb-4">
       <a href="#" class="text-blue-500 hover:underline">Forgot Password?</a>
     </div>
     <button type="submit" class="btn-primary w-full">Login</button>
@@ -135,7 +140,11 @@
     Don’t have an account?
     <a href="#" class="text-blue-600 font-medium" onclick="showPage('register-page')">Register</a>
   </p>
+  <input type="checkbox" id="rememberMe">
+<label for="rememberMe">Remember Me</label>
+
   <button class="mt-4 btn-secondary w-full" onclick="showPage('home-page')">Back</button>
+
 </div>
 
 <!-- STUDENT CORNER -->
@@ -186,11 +195,11 @@
     <!-- Step 1 -->
     <div class="reg-step active" id="r1">
       <div class="section-title">Personal Information</div>
-      <input class="input-field" placeholder="First Name">
-      <input class="input-field" placeholder="Last Name">
-      <input class="input-field" placeholder="Full Name">
-      <input class="input-field" placeholder="Email">
-      <input class="input-field" placeholder="Phone Number">
+      <input class="input-field" id="firstname" placeholder="First Name">
+      <input class="input-field" id="lastname" placeholder="Last Name">
+      <input class="input-field" id="fullname"   placeholder="Full Name">
+      <input class="input-field" id="email" placeholder="Email">
+      <input class="input-field" id="phoneno" placeholder="Phone Number">
 
       <nav class="flex justify-between items-center mt-6" aria-label="Pagination">
         <ul class="inline-flex -space-x-px">
@@ -203,12 +212,12 @@
     <!-- Step 2 -->
     <div class="reg-step" id="r2">
       <div class="section-title">Family Information</div>
-      <input class="input-field" placeholder="Father’s Name">
-      <input class="input-field" placeholder="Father’s Occupation">
-      <input class="input-field" placeholder="Father’s Mobile No.">
-      <input class="input-field" placeholder="Mother’s Name">
-      <input class="input-field" placeholder="Mother’s Occupation">
-      <input class="input-field" placeholder="Mother’s Mobile No.">
+      <input class="input-field" id="father" placeholder="Father’s Name">
+      <input class="input-field" id="focc" placeholder="Father’s Occupation">
+      <input class="input-field" id="fatherno" placeholder="Father’s Mobile No.">
+      <input class="input-field" id="mothername" placeholder="Mother’s Name">
+      <input class="input-field" id="mocc" placeholder="Mother’s Occupation">
+      <input class="input-field"id="motherno" placeholder="Mother’s Mobile No.">
 
       <nav class="flex justify-between items-center mt-6" aria-label="Pagination">
         <ul class="inline-flex -space-x-px">
@@ -221,11 +230,11 @@
     <!-- Step 3 -->
     <div class="reg-step" id="r3">
       <div class="section-title">Address</div>
-      <input class="input-field" placeholder="Address">
-      <input class="input-field" placeholder="City">
-      <input class="input-field" placeholder="Tal.">
-      <input class="input-field" placeholder="Dist">
-      <input class="input-field" placeholder="Pincode">
+      <input class="input-field" id="add" placeholder="Address">
+      <input class="input-field" id="city" placeholder="City">
+      <input class="input-field" id="tal" placeholder="Tal.">
+      <input class="input-field" id="dist" placeholder="Dist">
+      <input class="input-field" id="pincode" placeholder="Pincode">
 
       <nav class="flex justify-between items-center mt-6" aria-label="Pagination">
         <ul class="inline-flex -space-x-px">
@@ -237,7 +246,7 @@
 
     <!-- Step 4 -->
     <div class="reg-step" id="r4">
-      <div class="section-title">Academic Details</div>
+      <div class="section-title" id="acdetails">Academic Details</div>
       <select class="input-field">
         <option disabled selected>Select Course</option>
         <option>B.Sc Computer Science</option>
@@ -250,9 +259,9 @@
         <option>M.Com</option>
         <option>M.Sc</option>
       </select>
-      <input class="input-field" placeholder="Last School / College">
-      <input class="input-field" placeholder="Last Year CGPA/Per">
-      <input class="input-field" placeholder="Last Year University">
+      <input class="input-field" id="lastschool" placeholder="Last School / College">
+      <input class="input-field" id="cgpa" placeholder="Last Year CGPA/Per">
+      <input class="input-field" id="uni" placeholder="Last Year University">
 
       <nav class="flex justify-between items-center mt-6" aria-label="Pagination">
         <ul class="inline-flex -space-x-px">
@@ -281,10 +290,10 @@
     <!-- Step 6 -->
     <div class="reg-step" id="r6">
       <div class="section-title">Verification</div>
-      <input class="input-field" placeholder="Enter Captcha: 12345">
+      <input class="input-field" id="agree" placeholder="Enter Captcha: 12345">
       <div class="flex items-center">
         <input type="checkbox" id="agree" class="mr-2">
-        <label for="agree">I agree to terms & conditions</label>
+        <label for="agree" id="agree">I agree to terms & conditions</label>
       </div>
 
       <nav class="flex justify-between items-center mt-6" aria-label="Pagination">
@@ -312,43 +321,201 @@
     <a href="https://www.unipune.ac.in/university_files/e-Books.htm">
     <div class="bg-blue-50 p-4 rounded-lg shadow hover:shadow-lg cursor-pointer">📥 Materials</div></a>
   </div>
-  <button class="mt-6 btn-primary w-full" onclick="showPage('home-page')">Logout</button>
+<button type="button" class="mt-6 btn-primary w-full" onclick="logoutUser()">
+  Logout
+</button>
+<label class="flex items-center gap-2">
+  <input type="checkbox" id="rememberMe">
+  Remember me
+</label>
+
 </div>
 
 <script>
-  function showPage(pageId) {
-    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-    document.getElementById(pageId).classList.add('active');
+/* ---------------- BASIC PAGE SWITCH ---------------- */
+function showPage(pageId) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById(pageId)?.classList.add('active');
+}
+
+function logoutUser() {
+  const confirmLogout = confirm("Are you sure you want to logout?");
+  
+  if (confirmLogout) {
+    alert("You logged out successfully ✅");
+    showPage("home-page");
+  }
+}
+
+/*--------------------Welcome Text and time -----------------*/
+function showWelcome() {
+  const user = JSON.parse(localStorage.getItem("userData"));
+
+  if (!user) return;
+
+  const welcomeText = document.getElementById("welcomeText");
+  const timeText = document.getElementById("timeText");
+
+  const now = new Date();
+  const time = now.toLocaleTimeString();
+
+  welcomeText.innerText = `Welcome, ${user.firstname} 👋`;
+  timeText.innerText = `Login time: ${time}`;
+}
+
+showWelcome();
+
+
+
+/* ---------------- REGISTRATION DATA ---------------- */
+let userData = {};
+let regStep = 1;
+
+/* ---------------- STEP NAVIGATION ---------------- */
+function nextRegStep(step) {
+
+  const currentStep = document.getElementById(`r${step}`);
+  const inputs = currentStep.querySelectorAll("input");
+
+  for (let input of inputs) {
+    if (input.value.trim() === "") {
+      alert("Please fill all fields 😅");
+      input.focus();
+      return;
+    }
   }
 
-  let regStep = 1;
-  function nextRegStep(step) {
-    document.getElementById(`r${step}`).classList.remove('active');
-    document.getElementById(`s${step}`).classList.remove('active');
-    regStep++;
-    document.getElementById(`r${regStep}`).classList.add('active');
-    document.getElementById(`s${regStep}`).classList.add('active');
-    document.getElementById('step-count').innerText = regStep;
+  document.getElementById(`r${step}`).classList.remove("active");
+  document.getElementById(`s${step}`).classList.remove("active");
+
+  regStep++;
+
+  document.getElementById(`r${regStep}`).classList.add("active");
+  document.getElementById(`s${regStep}`).classList.add("active");
+
+  document.getElementById("step-count").innerText = regStep;
+}
+
+
+function prevRegStep(step) {
+  document.getElementById(`r${step}`)?.classList.remove("active");
+  document.getElementById(`s${step}`)?.classList.remove("active");
+
+  regStep--;
+
+  document.getElementById(`r${regStep}`)?.classList.add("active");
+  document.getElementById(`s${regStep}`)?.classList.add("active");
+
+  document.getElementById("step-count").innerText = regStep;
+}
+
+/* ---------------- SAVE STEP 1 ---------------- */
+function saveStep1() {
+  userData.firstname = document.getElementById("firstname")?.value || "";
+  userData.lastname = document.getElementById("lastname")?.value || "";
+  userData.email = document.getElementById("email")?.value || "";
+  userData.phone = document.getElementById("phoneno")?.value || "";
+
+  
+  console.log("STEP 1:", userData);
+  nextRegStep(1);
+}
+
+/* ---------------- SAVE STEP 2 ---------------- */
+function saveStep2() {
+  userData.father = document.getElementById("father")?.value || "";
+  userData.fatherOcc = document.getElementById("focc")?.value || "";
+  userData.mother = document.getElementById("mothername")?.value || "";
+  userData.motherOcc = document.getElementById("mocc")?.value || "";
+
+  console.log("STEP 2:", userData);
+  nextRegStep(2);
+}
+
+/* ---------------- FINAL SUBMIT ---------------- */
+function finishRegistration() {
+   const captcha = document.getElementById("captcha").value.trim();
+  const agree = document.getElementById("agree").checked;
+
+  if (captcha !== "12345") {
+    alert("Captcha incorrect 😅");
+    return;
   }
 
-  function prevRegStep(step) {
-    document.getElementById(`r${step}`).classList.remove('active');
-    document.getElementById(`s${step}`).classList.remove('active');
-    regStep--;
-    document.getElementById(`r${regStep}`).classList.add('active');
-    document.getElementById(`s${regStep}`).classList.add('active');
-    document.getElementById('step-count').innerText = regStep;
+  if (!agree) {
+    alert("Please accept Terms & Conditions");
+    return;
   }
 
-  function finishRegistration() {
-    alert("Registration Completed Successfully!");
-    showPage('dashboard-page');
-  }
 
-  document.getElementById('login-form')?.addEventListener('submit', e => {
-    e.preventDefault();
-    showPage('dashboard-page');
-  });
+  userData = {
+    firstname: document.getElementById("firstname")?.value || "",
+    lastname: document.getElementById("lastname")?.value || "",
+    email: document.getElementById("email")?.value || "",
+    phone: document.getElementById("phoneno")?.value || "",
+
+    father: document.getElementById("father")?.value || "",
+    fatherOcc: document.getElementById("focc")?.value || "",
+    mother: document.getElementById("mothername")?.value || "",
+    motherOcc: document.getElementById("mocc")?.value || "",
+
+    address: document.getElementById("add")?.value || "",
+    city: document.getElementById("city")?.value || "",
+    tal: document.getElementById("tal")?.value || "",
+    dist: document.getElementById("dist")?.value || "",
+    pincode: document.getElementById("pincode")?.value || "",
+
+
+    
+    registerDate: new Date().toLocaleString()
+  };
+
+  console.log("FINAL DATA:", userData);
+
+  localStorage.setItem("studentData", JSON.stringify(userData));
+
+  alert("Registration Completed Successfully!");
+  showPage("dashboard-page");
+}
+
+
+
+
+
+
+
+/* ---------------- LOGIN ---------------- */
+document.getElementById("login-form")?.addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const email = document.getElementById("email").value;
+   const password = document.getElementById("password").value;
+  const remember = document.getElementById("rememberMe").checked;
+  const user = JSON.parse(localStorage.getItem("studentData"));
+
+  if (!user || user.email !== email) {
+    alert("User not found please register first😕,");
+    return;
+  }
+  /*--------------TO REMEMBER LOGIN INFO ------------------*/
+  if (remember) {
+    localStorage.setItem("rememberUser", JSON.stringify(user));
+  } else {
+    localStorage.removeItem("rememberUser");
+  }
+window.onload = function () {
+  const rememberedUser = JSON.parse(localStorage.getItem("rememberUser"));
+
+  if (rememberedUser) {
+    showPage("dashboard-page");
+    showWelcome();
+  }
+};
+
+  showPage("dashboard-page");
+  showWelcome();
+});
+
 </script>
 
 </body>
